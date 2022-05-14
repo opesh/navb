@@ -17,6 +17,17 @@
 // }
 
 // btnStart.addEventListener('click', check);
+let date = new Date();
+let day = date.getDay(),
+hour = date.getHours(),
+munites = date.getMinutes(),
+seconds = date.getSeconds();
+
+let time = function () {
+    console.log(`date: ${hour} : ${munites} : ${seconds}`);
+}
+
+time();
 
 
 let btnStart = document.getElementById("card");
@@ -30,14 +41,48 @@ function check(){
     let username = inputuname.value;
     let password = inputpass.value;
     if(username === uname && Number(password) === pass){
-
         rdetails.innerHTML = ('user login successfully');
         document.querySelector('#contain').style.display = 'none';
         document.querySelector('#contain2').style.display = 'block';
     }else{
         wdetails.innerHTML = ('user login failed');
+    }      
+}
+const answer = []
+function displayRadioValue(){
+    var ele = document.getElementsByName('radio1');
+    for (const val of ele) {
+        if (val.checked) {
+            answer.push(val.value);
+        } 
     }
-        
+}
+
+displayRadioValue();
+
+
+
+setTimeout(() => {
+    // console.log(displayRadioValue())
+    console.log(answer)
+}, 15000);
+
+function addAnswerToLocalStorage(){
+    let answers = getAnswerFromStorage();
+    answers.push(answer);
+    localStorage.setItem("answers", JSON.stringify(answers));
+    console.log(answers);
+}
+function getAnswerFromStorage(){
+    let answers;
+    const answersLS = localStorage.getItem("answers");
+    if(answersLS === null){
+        answers = [];
+    }
+    else{
+        answers = JSON.parse(answersLS);
+    }
+    return answers;
 }
 
 btnStart.addEventListener('click', check);
@@ -50,6 +95,7 @@ function question2(){
     document.querySelector('#contain2').style.display = 'none';
     document.querySelector('#contain3').style.display = 'block';
 }
+
 btnstart_2.addEventListener('click',question2)
 
 function prevquestion2(){
@@ -105,3 +151,53 @@ function prevquestion5(){
     document.querySelector('#contain6').style.display = 'none';
 }
 btnStart_7.addEventListener('click',prevquestion5);
+
+let btnStart_9= document.getElementById('prev6');
+let btnStart_10 = document.getElementById('next5');
+
+function question6(){
+    document.querySelector('#contain6').style.display = 'none';
+    document.querySelector('#contain7').style.display = 'block';
+
+}
+btnStart_10.addEventListener('click', question6);
+
+function prevquestion6(){
+    document.querySelector('#contain6').style.display = 'block';
+    document.querySelector('#contain7').style.display = 'none';
+}
+btnStart_9.addEventListener('click',prevquestion6);
+
+let btnStart_11= document.getElementById('prev7');
+let btnStart_12 = document.getElementById('next6');
+
+function question7(){
+    document.querySelector('#contain7').style.display = 'none';
+    document.querySelector('#contain8').style.display = 'block';
+
+}
+btnStart_12.addEventListener('click', question7);
+
+function prevquestion7(){
+    document.querySelector('#contain7').style.display = 'block';
+    document.querySelector('#contain8').style.display = 'none';
+}
+btnStart_11.addEventListener('click',prevquestion7);
+
+let btnStart_13= document.getElementById('prev8');
+let btnStart_14 = document.getElementById('next7');
+
+function question8(){
+    document.querySelector('#contain8').style.display = 'none';
+    document.querySelector('#contain9').style.display = 'block';
+
+}
+btnStart_14.addEventListener('click', question8);
+
+function prevquestion8(){
+    document.querySelector('#contain8').style.display = 'block';
+    document.querySelector('#contain9').style.display = 'none';
+}
+btnStart_13.addEventListener('click',prevquestion8);
+
+

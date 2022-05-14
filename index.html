@@ -31,14 +31,16 @@
             <h2>Question 1</h2>
             <h4> who is the president of nigeria</h4>
         </div>
-        <div class="card2">
-            <input type="radio" name="radio" id=""> buhari<br>
-            <input type="radio" name="radio" id=""> jonathan<br>
-            <input type="radio" name="radio" id=""> atiku<br>
-            <input type="radio" name="radio" id=""> ajumobi<br>
-        </div>
+        <form action = "" class="card2">
+            <input type="radio" name="radio1" value="buhari"> buhari<br>
+            <input type="radio" name="radio1" value="jonathan" > jonathan<br>
+            <input type="radio" name="radio1" value="atiku" > atiku<br>
+            <input type="radio" name="radio1" value="ajumobi"> ajumobi<br>
+            
+           
+        </form>
         <div class="btn">
-            <button id="next1">next</button>
+            <button id="next1" onclick="displayRadioValue()" onclick ="addAnswerToLocalStorage()">next</button>
         </div>
     </div>
     <div class="container2" id="contain3">
