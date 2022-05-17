@@ -52,3 +52,28 @@ input{
     right: 10%;
     bottom: 10%;
 }
+#btn_content{
+    width: 40%;
+    height: 40%;
+    display: none;
+}
+.btn_option{
+    width: 65%;
+    height: 50%;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px black;
+    margin: 20px;
+}
+
+.btnn{
+    height: 20%;
+    padding: 2%;
+    margin: 1.0%;
+
+}
+.btnn:focus{
+     background-color: blue;
+     color: white;
+}

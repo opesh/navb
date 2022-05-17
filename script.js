@@ -17,17 +17,17 @@
 // }
 
 // btnStart.addEventListener('click', check);
-let date = new Date();
-let day = date.getDay(),
-hour = date.getHours(),
-munites = date.getMinutes(),
-seconds = date.getSeconds();
+// let date = new Date();
+// let day = date.getDay(),
+// hour = date.getHours(),
+// munites = date.getMinutes(),
+// seconds = date.getSeconds();
 
-let time = function () {
-    console.log(`date: ${hour} : ${munites} : ${seconds}`);
-}
+// let time = function () {
+//     console.log(`date: ${hour} : ${munites} : ${seconds}`);
+// }
 
-time();
+// time();
 
 
 let btnStart = document.getElementById("card");
@@ -44,6 +44,8 @@ function check(){
         rdetails.innerHTML = ('user login successfully');
         document.querySelector('#contain').style.display = 'none';
         document.querySelector('#contain2').style.display = 'block';
+        document.querySelector('#btn_content').style.display = 'block';
+        startLogOutTime();
     }else{
         wdetails.innerHTML = ('user login failed');
     }      
@@ -56,11 +58,13 @@ function displayRadioValue(){
             answer.push(val.value);
         } 
     }
+
+
 }
 
 displayRadioValue();
 
-
+console.log(answer);
 
 setTimeout(() => {
     // console.log(displayRadioValue())
@@ -69,9 +73,9 @@ setTimeout(() => {
 
 function addAnswerToLocalStorage(){
     let answers = getAnswerFromStorage();
-    answers.push(answer);
+    answers.push(...answer);
     localStorage.setItem("answers", JSON.stringify(answers));
-    console.log(answers);
+    console.log(answers)
 }
 function getAnswerFromStorage(){
     let answers;
@@ -200,4 +204,219 @@ function prevquestion8(){
 }
 btnStart_13.addEventListener('click',prevquestion8);
 
+let btnStart_15= document.getElementById('prev9');
+let btnStart_16 = document.getElementById('next8');
 
+function question9(){
+    document.querySelector('#contain9').style.display = 'none';
+    document.querySelector('#contain10').style.display = 'block';
+
+}
+btnStart_16.addEventListener('click', question9);
+
+function prevquestion9(){
+    document.querySelector('#contain9').style.display = 'block';
+    document.querySelector('#contain10').style.display = 'none';
+}
+btnStart_15.addEventListener('click',prevquestion9);
+
+let btnStart_17= document.getElementById('prev10');
+let btnStart_18 = document.getElementById('next9');
+
+function question10(){
+    document.querySelector('#contain10').style.display = 'none';
+    document.querySelector('#contain11').style.display = 'block';
+
+}
+btnStart_18.addEventListener('click', question10);
+
+function prevquestion10(){
+    document.querySelector('#contain10').style.display = 'block';
+    document.querySelector('#contain11').style.display = 'none';
+}
+btnStart_17.addEventListener('click',prevquestion10);
+
+const timeCountDown = document.querySelector('.time')
+
+const startLogOutTime = function(){
+    let time = 100;
+
+    const countDown = function(){
+        const min = String(Math.trunc(time / 60)).padStart(2,0)
+        const sec = String(time % 60).padStart(2, 0)
+
+        console.log(`${min}:${sec}`);
+
+        if (time === 0) {
+            clearInterval(timer);
+            document.body.innerHTML = "time up"
+        }
+        timeCountDown.textContent = `${min}:${sec}`;
+        
+        time--;
+    }
+
+    countDown();
+
+    const timer = setInterval(countDown, 1000);
+
+    console.log(timer);
+}
+let btnn_1 = document.getElementById('btnn_1')
+  function btnQuestion_1(){
+    document.querySelector('#contain2').style.display = 'block';
+    document.querySelector('#contain3').style.display = 'none';
+    document.querySelector('#contain4').style.display = 'none';
+    document.querySelector('#contain5').style.display = 'none';
+    document.querySelector('#contain6').style.display = 'none';
+    document.querySelector('#contain7').style.display = 'none';
+    document.querySelector('#contain8').style.display = 'none';
+    document.querySelector('#contain9').style.display = 'none';
+    document.querySelector('#contain10').style.display = 'none';
+    document.querySelector('#contain11').style.display = 'none';
+    
+  }
+  btnn_1.addEventListener('click',btnQuestion_1);
+  let btnn_2 = document.getElementById('btnn_2')
+  function btnQuestion_2(){
+    document.querySelector('#contain2').style.display = 'none';
+    document.querySelector('#contain3').style.display = 'block';
+    document.querySelector('#contain4').style.display = 'none';
+    document.querySelector('#contain5').style.display = 'none';
+    document.querySelector('#contain6').style.display = 'none';
+    document.querySelector('#contain7').style.display = 'none';
+    document.querySelector('#contain8').style.display = 'none';
+    document.querySelector('#contain9').style.display = 'none';
+    document.querySelector('#contain10').style.display = 'none';
+    document.querySelector('#contain11').style.display = 'none';
+    
+  }
+  btnn_2.addEventListener('click',btnQuestion_2);
+
+  let btnn_3 = document.getElementById('btnn_3')
+  function btnQuestion_3(){
+    document.querySelector('#contain2').style.display = 'none';
+    document.querySelector('#contain3').style.display = 'none';
+    document.querySelector('#contain4').style.display = 'block';
+    document.querySelector('#contain5').style.display = 'none';
+    document.querySelector('#contain6').style.display = 'none';
+    document.querySelector('#contain7').style.display = 'none';
+    document.querySelector('#contain8').style.display = 'none';
+    document.querySelector('#contain9').style.display = 'none';
+    document.querySelector('#contain10').style.display = 'none';
+    document.querySelector('#contain11').style.display = 'none';
+    
+  }
+  btnn_3.addEventListener('click', btnQuestion_3);
+  
+  let btnn_4 = document.getElementById('btnn_4')
+  function btnQuestion_4(){
+    document.querySelector('#contain2').style.display = 'none';
+    document.querySelector('#contain3').style.display = 'none';
+    document.querySelector('#contain4').style.display = 'none';
+    document.querySelector('#contain5').style.display = 'block';
+    document.querySelector('#contain6').style.display = 'none';
+    document.querySelector('#contain7').style.display = 'none';
+    document.querySelector('#contain8').style.display = 'none';
+    document.querySelector('#contain9').style.display = 'none';
+    document.querySelector('#contain10').style.display = 'none';
+    document.querySelector('#contain11').style.display = 'none';
+    
+  }
+  btnn_4.addEventListener('click', btnQuestion_4);
+
+  let btnn_5= document.getElementById('btnn_5')
+  function btnQuestion_5(){
+    document.querySelector('#contain2').style.display = 'none';
+    document.querySelector('#contain3').style.display = 'none';
+    document.querySelector('#contain4').style.display = 'none';
+    document.querySelector('#contain5').style.display = 'none';
+    document.querySelector('#contain6').style.display = 'block';
+    document.querySelector('#contain7').style.display = 'none';
+    document.querySelector('#contain8').style.display = 'none';
+    document.querySelector('#contain9').style.display = 'none';
+    document.querySelector('#contain10').style.display = 'none';
+    document.querySelector('#contain11').style.display = 'none';
+    
+  }
+  btnn_5.addEventListener('click', btnQuestion_5);
+
+  let btnn_6= document.getElementById('btnn_6')
+  function btnQuestion_6(){
+    document.querySelector('#contain2').style.display = 'none';
+    document.querySelector('#contain3').style.display = 'none';
+    document.querySelector('#contain4').style.display = 'none';
+    document.querySelector('#contain5').style.display = 'none';
+    document.querySelector('#contain6').style.display = 'none';
+    document.querySelector('#contain7').style.display = 'block';
+    document.querySelector('#contain8').style.display = 'none';
+    document.querySelector('#contain9').style.display = 'none';
+    document.querySelector('#contain10').style.display = 'none';
+    document.querySelector('#contain11').style.display = 'none';
+    
+  }
+  btnn_6.addEventListener('click', btnQuestion_6);
+
+  let btnn_7= document.getElementById('btnn_7')
+  function btnQuestion_7(){
+    document.querySelector('#contain2').style.display = 'none';
+    document.querySelector('#contain3').style.display = 'none';
+    document.querySelector('#contain4').style.display = 'none';
+    document.querySelector('#contain5').style.display = 'none';
+    document.querySelector('#contain6').style.display = 'none';
+    document.querySelector('#contain7').style.display = 'none';
+    document.querySelector('#contain8').style.display = 'block';
+    document.querySelector('#contain9').style.display = 'none';
+    document.querySelector('#contain10').style.display = 'none';
+    document.querySelector('#contain11').style.display = 'none';
+    
+  }
+  btnn_7.addEventListener('click', btnQuestion_7);
+
+  let btnn_8= document.getElementById('btnn_8')
+  function btnQuestion_8(){
+    document.querySelector('#contain2').style.display = 'none';
+    document.querySelector('#contain3').style.display = 'none';
+    document.querySelector('#contain4').style.display = 'none';
+    document.querySelector('#contain5').style.display = 'none';
+    document.querySelector('#contain6').style.display = 'none';
+    document.querySelector('#contain7').style.display = 'none';
+    document.querySelector('#contain8').style.display = 'none';
+    document.querySelector('#contain9').style.display = 'block';
+    document.querySelector('#contain10').style.display = 'none';
+    document.querySelector('#contain11').style.display = 'none';
+    
+  }
+  btnn_8.addEventListener('click', btnQuestion_8);
+
+  let btnn_9= document.getElementById('btnn_9')
+  function btnQuestion_9(){
+    document.querySelector('#contain2').style.display = 'none';
+    document.querySelector('#contain3').style.display = 'none';
+    document.querySelector('#contain4').style.display = 'none';
+    document.querySelector('#contain5').style.display = 'none';
+    document.querySelector('#contain6').style.display = 'none';
+    document.querySelector('#contain7').style.display = 'none';
+    document.querySelector('#contain8').style.display = 'none';
+    document.querySelector('#contain9').style.display = 'none';
+    document.querySelector('#contain10').style.display = 'block';
+    document.querySelector('#contain11').style.display = 'none';
+    
+  }
+  btnn_9.addEventListener('click', btnQuestion_9);
+
+  let btnn_10= document.getElementById('btnn_10')
+  function btnQuestion_10(){
+    document.querySelector('#contain2').style.display = 'none';
+    document.querySelector('#contain3').style.display = 'none';
+    document.querySelector('#contain4').style.display = 'none';
+    document.querySelector('#contain5').style.display = 'none';
+    document.querySelector('#contain6').style.display = 'none';
+    document.querySelector('#contain7').style.display = 'none';
+    document.querySelector('#contain8').style.display = 'none';
+    document.querySelector('#contain9').style.display = 'none';
+    document.querySelector('#contain10').style.display = 'none';
+    document.querySelector('#contain11').style.display = 'block';
+    
+  }
+  btnn_10.addEventListener('click', btnQuestion_10);
